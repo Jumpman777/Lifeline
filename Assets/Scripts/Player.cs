@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float moveSpeed= 5;
     [SerializeField] private float rotateSpeed = 5f;
+
+    public bool isRunning;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,8 @@ public class Player : MonoBehaviour
         // increment gameobject/player transform position by the vector3 
         transform.position += moveDir* Time.deltaTime* moveSpeed;
 
+        // bool returns true when inputis not zero
+        isRunning = moveDir != Vector3.zero;
         
         // set forward pos to players move direction
         transform.forward = Vector3.Lerp(transform.position, moveDir, Time.deltaTime* rotateSpeed);
@@ -66,5 +70,12 @@ public class Player : MonoBehaviour
 
 
         
+    }
+
+
+   
+    public bool IsRunning()
+    {
+        return isRunning;
     }
 }
