@@ -12,7 +12,7 @@ public class GameInput : MonoBehaviour
     private void Awake()
     {
         // make object of auto generated script/ construct object of type PlayerInput
-        PlayerInput playerInput= new PlayerInput();
+        playerInput= new PlayerInput();
         //enable input system/ activate chosen action map 
         playerInput.Player.Enable();
     }
